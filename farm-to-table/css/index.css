@@ -1,0 +1,368 @@
+*{
+    box-sizing: border-box; /* this will respect the width i give to elements - add padding and border within them */
+    margin: 0;
+    padding: 0;
+    max-width: 100%; /* you can never be bigger than your parent element */
+    /* border: 1px solid grey; */
+}
+
+/* 
+% - based on the parent element
+ems - multiply off their parent - nested font sizes get out of hand
+rems - "root ems" that solve problems ems caused. have a base parent of HTML and everything else is based off of that
+vh/vw - view height and view width - based off the viewport
+pixels - hard coded - fixed values
+
+Brit's Rules:
+- uses % for pretty much everything
+- rems for fonts
+*/
+
+/* default font size is 16 pixels */
+
+html{
+    font-size: 62.5%; /* 1 rem === 10 px */
+}
+
+body{
+    font-size: 1.6rem; /* so this is 16 px */
+    line-height: 1.5; /* takes font size, multiply by this number, and adds space in between the lines */
+    color: #444444;
+    background-color: #FFFAFA;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3{
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    letter-spacing: 3px; /* this is small, so worth using a pixel value for */
+}
+
+/* general styles */
+h1{
+    font-size: 5rem; /* 50 pixels */
+}
+
+h2{
+    font-size: 3rem;
+}
+
+h3{
+    font-size: 2.5rem;
+}
+
+section, footer{
+    padding: 4% 0; /* 4% on top and bottom, 0 on left and right */
+}
+
+a{
+    text-decoration: none;
+    color: #444444;
+    font-family: 'Open Sans', sans-serif;
+    transition: 0.2s;
+}
+
+a:visited{
+    color:#444444; 
+}
+
+a:hover{
+    color: #fcb131;
+}
+
+i{
+    font-size: 5rem;
+}
+
+/* helper classes */
+.bg-image{
+    background-size: cover; /* fit into the parent */
+    background-repeat: no-repeat; /* no tiling effect on larger screen sizes */
+}
+
+/* header section styles */
+header nav{
+    width: 100%;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    align-items: center;
+    top:0;
+}
+
+.links{
+    width: 50%;
+    display:flex;
+    justify-content: space-around;
+}
+
+/* top section styles */
+#top{
+    height: 85vh;
+    background-image: url('../images/header.jpg');
+    background-position: center top; /* centering it and starting on the top */
+    display: flex; /* goes on parent */
+    justify-content: center;
+    align-items: center;
+    margin-top: 5.5%;
+}
+
+.titles{
+    width: 30%;
+    color: #FFFAFA;
+    text-shadow: 2px 2px 5px #000;
+}
+
+/* farm section styles */
+.container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+.box{
+    width: 20%;
+    border: 3px solid #444444;
+    background-color: white;
+    padding: 4%;
+    text-align: center;
+}
+
+/* blank section styles */
+.hero-image{
+    height: 40vh;
+    background-image: url('../images/dirt.jpg');
+    background-position: center;
+    background-attachment: fixed; /* this will make the image stay fixed while we scroll */
+}
+
+/* about section styles */
+#about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about div{
+    width: 60%;
+    padding: 4%;
+    border: 3px solid #444444;
+    background-color: #FFFFFF;
+}
+
+#about div p{
+    margin-top: 3%;
+}
+
+/* classes section styles */
+.classes{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.class{
+    width: 40%;
+    height: 35vh;
+    margin: 2% 0;
+    display:flex;
+    align-items: flex-end;
+}
+
+.class div{
+    width: 40%;
+    height: 10vh;
+    background-color: #FFFFFF;
+    text-align: center;
+    display:none;
+}
+
+.class:hover div.hide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.farm{
+    background-image: url('../images/barn.jpg');
+}
+
+.cooking{
+    background-image: url('../images/cook.jpg');
+}
+
+.produce{
+    background-image: url('../images/produce.jpg');
+    background-position: bottom;
+}
+
+.animals{
+    background-image: url('../images/sheep.jpg');
+}
+
+/* contact section styles */
+#contact{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+#contact h2{
+    width: 100%;
+} 
+
+.left, .right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4% 0;
+} 
+
+.left div{
+    width:40%;
+    line-height: 2;
+}
+
+.right img{
+    width:60%;
+}
+
+/* footer section style */
+footer{
+    background-color: #fcb131;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer a{
+    color:white;
+}
+
+footer a:visited{
+    color:white;
+}
+
+footer a:hover{
+    color: black;
+}
+
+footer div{
+    width: 33%;
+}
+
+nav.social{
+    display:flex;
+    justify-content: space-around;
+    margin-top: 10%;
+}
+
+.footer-nav{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-nav a{
+    margin: 2% 0;
+}
+
+.copyright{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/* media queries */
+/* tablet */
+/* max-width - max width is for scaling down - desktop first. ex: max-width 800px - this targets 800 px and smaller */
+/* min-width - min width is for scaling up - mobile first. ex: min-width 800px - this targets 800 px and bigger */
+@media (max-width:800px){
+    #top{
+        margin-top:7%
+    }
+
+    .titles{
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+    }
+
+    #about div{
+        width: 80%;
+    }
+
+    .class div.hide{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* phone */
+@media (max-width: 500px){
+    header nav{
+        flex-direction:column;
+        height:15vh;
+    }
+
+    .links{
+        width:100%;
+    }
+
+    #top{
+        margin-top:17%;
+    }
+
+    .titles{
+        width:60%;
+    }
+
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box{
+        width:80%;
+        margin:2% 0;
+    }
+
+    .class{
+        width:80%;
+    }
+
+    .left, .right{
+        width:100%;
+        text-align:center;
+    }
+
+    .left{
+        order:2;
+    }
+
+    .right{
+        order:1;
+    }
+
+    footer{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer div{
+        width:90%;
+        margin:4% 0;
+    }
+
+    footer h3{
+        font-size:2rem;
+    }
+    
+    .copyright{
+        justify-content: center;
+        align-items: center;
+    }
+}
